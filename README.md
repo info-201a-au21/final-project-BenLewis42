@@ -10,7 +10,7 @@
    - [Impact of anthropogenic climate change on wildfire across western US forests | PNAS](https://www.pnas.org/content/113/42/11770)
      <br> Description: This data study investigates how human-driven actions enhance western US wildfires through increasing climate change. Utilizing ecological metrics that enable more wildfires, researchers established that humans are responsible for impacting these metrics.
    - [Climate Change Indicators: Wildfires | US EPA](https://www.epa.gov/climate-indicators/climate-change-indicators-wildfires)
-     <br> The EPA released this project using data from National Interagency Fire Center and the MTBS multi-agency project to create informative visualizations about the extent and magnitude of wildfires across the United States over the last 3 decades.
+     <br> Description: The EPA released this project using data from National Interagency Fire Center and the MTBS multi-agency project to create informative visualizations about the extent and magnitude of wildfires across the United States over the last 3 decades.
 3. **Data driven questions**
    <br> **Answer:**
    - What are 15 counties influenced most by the wildfire? Answer this by visualizing the number of wildfires happened in counties.
