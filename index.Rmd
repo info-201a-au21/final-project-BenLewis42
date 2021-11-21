@@ -1,0 +1,24 @@
+---
+title: "California Wildfires Report"
+author: "Abigail Chutnik, Ben Lewis, Hangliang Ren, Alex Andrei Ungureanasu"
+date: "11/20/2021"
+output: html_document
+---
+
+
+## Introduction
+
+
+
+## Summary
+
+
+
+## Table
+
+
+## Chart 1/Figure 1
+
+## Chart 2/Figure 2
+
+## Chart 3/Figure 3
