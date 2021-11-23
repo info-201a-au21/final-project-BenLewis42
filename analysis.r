@@ -3,7 +3,7 @@ library(tidyverse)
 # load dataset
 fire <- read.csv("https://raw.githubusercontent.com/info-201a-au21/final-project-BenLewis42/main/data/California_Fire_Incidents.csv?token=AV7PTMEAB4EIVDJFBIYWUFLBUVHEG")
 
-# Q1: From 2013 to 2020, what it the average Acres of land affected by wildfires
+# Q1: From 2013 to 2020, what is the average Acres of land affected by wildfires
 # per year? Store this value in `avg_burn`. This avg_burn value will give our
 # users an impressive description about how huge the influence caused by wildfire
 # is.
