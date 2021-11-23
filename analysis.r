@@ -45,20 +45,20 @@ year_mfreq <- fire %>%
 # give our users a deep impressions about whether California state has enough
 # resources currently to cope with wildfire incidents and how to improve in the
 # future.
-total_wild <- count(fire)
+total_wild <- nrow(fire)
 air_used <- fire %>%
   filter(!is.na(AirTankers))
-air_used <- count(air_used)
+air_used <- nrow(air_used)
 air_pro <- air_used / total_wild
 
 doz_used <- fire %>%
   filter(!is.na(Dozers))
-doz_used <- count(doz_used)
+doz_used <- nrow(doz_used)
 doz_pro <- doz_used / total_wild
 
 eng_used <- fire %>%
   filter(!is.na(Engines))
-eng_used <- count(eng_used)
+eng_used <- nrow(eng_used)
 eng_pro <- eng_used / total_wild
 
 # Q5: Compare 2013 and 2019 data, how is the average labor participated in
