@@ -82,7 +82,7 @@ avg_lchange <- (labor_2019 - labor_2013) / labor_2013
 
 # store summary in a list
 summary_info <- list()
-summary_info$avg <- avg_burn
+summary_info$avg_burn <- avg_burn
 summary_info$county_mfreq <- county_mfreq
 summary_info$year_mfreq <- year_mfreq
 summary_info$air_pro <- air_pro
