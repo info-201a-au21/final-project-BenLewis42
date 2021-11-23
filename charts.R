@@ -16,7 +16,7 @@ acres_and_year <- data %>%
   group_by(ArchiveYear)%>%
   summarise_all(sum)
 
-ggplot(acres_and_year, aes(x=ArchiveYear, y=AcresBurned))+
+gg_bar <- ggplot(acres_and_year, aes(x=ArchiveYear, y=AcresBurned))+
   geom_col()+
   xlab("Year")+
   ylab("Number of Acres Burned") +
@@ -32,7 +32,7 @@ c_d_e_year <- data %>%
 
 
 
-ggplot(c_d_e_year, aes(x=ArchiveYear)) +
+gg_line <- ggplot(c_d_e_year, aes(x=ArchiveYear)) +
   geom_line(aes(y=Dozers, color = "Dozers"))+
   geom_line(aes(y=Engines, color = "Engines"))+
   geom_line(aes(y=Helicopters, color = "Helicopters"))+
@@ -52,7 +52,7 @@ fires_location <- subset(fires_location, Longitude < 0 & Latitude < 42.5 & Latit
 
 states <- map_data("state")
 ca_df <- subset(states, region == "california")
-ggplot(data = ca_df, mapping = aes(x = long, y = lat)) + 
+gg_ca <- ggplot(data = ca_df, mapping = aes(x = long, y = lat)) + 
   coord_fixed(1.3) + 
   geom_polygon(color = "black", fill = "gray") +
   geom_point(data = fires_location, aes(x = Longitude, y = Latitude))+
