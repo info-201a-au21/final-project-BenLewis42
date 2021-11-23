@@ -26,16 +26,7 @@ our report investigates the trends in wildfires, specifically in California.
 In order to analyze the trends within the last decade, our analysis focuses on
 the years 2013 to 2020. Wildfires show tremendous consequences on our
 environment as each year, **1,070,651** acres of land were impacted by wildfires.
-Specifically, Riverside county suffered from wildfires the most during this
-time period. Additionally, **2017** was the worst year for wildfires in
-California, since the most occurred during that year. We also wanted to look
-at the proportion of equipment used by firefighters and personnel, and found
-that engines are used the most. The proportions of these
-equipment used are helicopters, dozers, and engines and their
-proportions are, respectively, **0.017**, **0.075**, and **0.117**. Lastly,
-we were curious about the average labor participated in handling the
-wildfires, which were about **580** in 2013 and decreased to **227** in
-2017, with the average change of **60%**. 
+Specifically, **`r county_mfreq`** county suffered from wildfires the most during this time period. Additionally, **`r year_mfreq``** was the worst year for wildfires in California, since the most occurred during that year. We also wanted to look at the proportion of equipment used by firefighters and personnel, and found that engines are used the most. The proportions of these equipment used are Airtankers, Dozers, and Engines and their proportions are, respectively, **`air_pro**, **`doz_pro**, and **`eng_pro**. Lastly, we were curious about the average labor participated in handling the wildfires, which were about **580** in 2013 and decreased to **227** in 2017, with the average change of **60%**. 
 
 
 ## Table
@@ -48,27 +39,29 @@ In this table, we noticed an increase in wildfire related deaths from
 table
 ```
 
+We feel that it is very important to show a table displaying the trend of deaths caused by wildfires. It gives our users a very direct impression about how destructive & harmful wildfire is. Also, sorted by time, our users can clearly identify the how huge the wildfire influence is in each year, and how it is changed over years. This can inpsire our users to do some further look / research about wildfires in those years caused most serious influence.
 
 ## Chart 1
 
 This bar graph includes the number of acres burned per year in order to
-showcase the amount of damage done by wildfires over time.
+showcase the amount of damage done by wildfires over time. It shows the number of burned acres from 2013 to 2019. This can help our users identify during which years among 2013-2019, California suffered the most influence from wildfires.
 
 ```{r echo=FALSE}
 gg_bar
 ```
 
+From the chart, we can see that the number of acres burned hugely increased during 2017 & 2018, and drop sharply in 2019. This means that some huge wildfires occurred in 2017-2018, and went back to normal in 2019.
+
 ## Chart 2
 
 This line graph demonstrates the frequencies of equipment and machinery used
-by firefighters and personnel to handle wildfires over time. Trends for these
-types of equipment are quite similar, besides the magnitude of each as shown
-with the high amount of "Engines" being used.
+by firefighters and personnel to handle wildfires over time. It demonstrates trends of using Dozers, Engines, and Helicopters from 2013 to 2019. This trends is helpful to help our users identify which equipments are used most frequently and how equipments usage is changed over years. Trends for these types of equipment are quite similar, besides the magnitude of each as shown with the high amount of "Engines" being used.
 
 ```{r echo=FALSE}
 gg_line
 ```
 
+Thus, related to chart 1, we can see that the trend of equipment usage changes correspondingly with the trend of wildfire occurrence. Also, engines is the most frequently used equipment in coping with wildfire.
 
 ## Chart 3
 
@@ -77,4 +70,4 @@ gg_ca
 ```
 
 This map shows the instance of wildfires in California through the last decade
-in order to highlight areas where there is a higher abundance of wildfires.
+in order to highlight areas where there is a higher abundance of wildfires. It is very meaningful to visualize locations of wildfires, so our users can notice which parts in California are used most by wildfires, and further think about what specific preparations can be done to cope with more than normal wildfires. From the chart, we can see that wildfire in California mainly concentrated in coastal & north areas of California, which implies that these regions do need to invest more in equipments / firefights coping with wildfires.
