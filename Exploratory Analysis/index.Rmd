@@ -1,0 +1,80 @@
+---
+title: "California Wildfires Report"
+author: "Abigail Chutnik, Ben Lewis, Hangliang Ren, Alex Andrei Ungureanasu"
+date: "11/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("analysis.R")
+source("table.R")
+source("charts.R")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+The western United States has faced increasing amounts of wildfires in the last 
+decade. Wildfires are a major threat to the population's own health and the
+health of our environment. Currently, many speculate that the increasing amounts
+of wildfires may be due to climate change and it's associated increasing
+temperatures. To understand more about wildfires in the West coast,
+our report investigates the trends in wildfires, specifically in California. 
+
+## Summary
+
+In order to analyze the trends within the last decade, our analysis focuses on
+the years 2013 to 2020. Wildfires show tremendous consequences on our
+environment as each year, **1,070,651** acres of land were impacted by wildfires.
+Specifically, Riverside county suffered from wildfires the most during this
+time period. Additionally, **2017** was the worst year for wildfires in
+California, since the most occurred during that year. We also wanted to look
+at the proportion of equipment used by firefighters and personnel, and found
+that engines are used the most. The proportions of these
+equipment used are helicopters, dozers, and engines and their
+proportions are, respectively, **0.017**, **0.075**, and **0.117**. Lastly,
+we were curious about the average labor participated in handling the
+wildfires, which were about **580** in 2013 and decreased to **227** in
+2017, with the average change of **60%**. 
+
+
+## Table
+
+This table is included to showcase the trends in wildfire deaths over the years.
+In this table, we noticed an increase in wildfire related deaths from
+2017 to 2018, and a sudden decrease in 2019.
+
+```{r echo=FALSE}
+table
+```
+
+
+## Chart 1
+
+This bar graph includes the number of acres burned per year in order to
+showcase the amount of damage done by wildfires over time.
+
+```{r echo=FALSE}
+gg_bar
+```
+
+## Chart 2
+
+This line graph demonstrates the frequencies of equipment and machinery used
+by firefighters and personnel to handle wildfires over time. Trends for these
+types of equipment are quite similar, besides the magnitude of each as shown
+with the high amount of "Engines" being used.
+
+```{r echo=FALSE}
+gg_line
+```
+
+
+## Chart 3
+
+```{r echo=FALSE}
+gg_ca
+```
+
+This map shows the instance of wildfires in California through the last decade
+in order to highlight areas where there is a higher abundance of wildfires.

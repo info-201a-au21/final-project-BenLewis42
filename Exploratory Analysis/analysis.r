@@ -79,13 +79,3 @@ labor_2019 <- fire %>%
   filter(ArchiveYear == 2019) %>%
   pull(avg)
 avg_lchange <- (labor_2019 - labor_2013) / labor_2013
-
-# store summary in a list
-summary_info <- list()
-summary_info$avg_burn <- avg_burn
-summary_info$county_mfreq <- county_mfreq
-summary_info$year_mfreq <- year_mfreq
-summary_info$air_pro <- air_pro
-summary_info$doz_pro <- doz_pro
-summary_info$eng_pro <- eng_pro
-summary_info$avg_lchange <- avg_lchange
