@@ -13,11 +13,44 @@ library(leaflet)
 
 # Second Page --------------------------------------------------------------
 # Includes:
-  # A ?? plot
+
+chart1_panel <- tabPanel(
+  "Chart 1",
+  titlePanel("Fire Damage by Year"),
+  
+  
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("chart1_year", label = h3("Year to Chart"), min = 2013, 
+                  max = 2019, value = 2016, step = 1, sep = "")
+      
+    ),
+    
+    mainPanel(
+      p("Display here")
+      
+    )
+  )
+)
+
+
+
+
+
+
 
 # Third Page --------------------------------------------------------------
 # Includes:
   # A ?? plot
+
+
+
+
+
+
+
+
+
 
 # Fourth Page --------------------------------------------------------------
 
@@ -66,4 +99,9 @@ plot_panel <- tabPanel(
 
 # Creating UI
 
-ui <- fluidPage(plot_panel)
+ui <- navbarPage("Final", 
+                 chart1_panel,
+                 plot_panel
+                 
+)
+               

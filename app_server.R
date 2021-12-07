@@ -8,6 +8,7 @@
 library(shiny)
 library(dplyr)
 library(leaflet)
+library(plotly)
 
 # Read data
 
@@ -50,5 +51,21 @@ server <- function(input, output){
       addLegend("bottomleft", pal = pal, values = ~AcresBurned, 
                 layerId = "colorLegend", title="Acres Burned", opacity = 1)
   })
+  
+  
+  
+  
+  output$chart1 <- renderPlotly({
+    
+    
+    
+    
+    # p <- plot_ly(x = , y = , type = "bar")
+    # 
+    # p
+    
+  })
+  
+  
   
 }
