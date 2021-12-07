@@ -29,13 +29,13 @@ library(leaflet)
 map_sidebar_content <- sidebarPanel(
   # First Widget
   selectInput(
-    "selectvar", label = h3("Major Incident? If not: Select 'False'"),
-    choices = c("True", "False")
+    "selectvar", label = h3("Type of Incidents to Display"),
+    choices = c("Major" = "True", "Minor" = "False")
   ),
 
   # Second Widget
   sliderInput("yearvar", label = h3("Year to Map"), min = 2013, 
-              max = 2019, value = 2016, step = 1)
+              max = 2019, value = 2016, step = 1, sep = "")
 )
 
 # Defines a variable `map_main_content` that is a `mainPanel()` for the

@@ -21,7 +21,7 @@ server <- function(input, output){
   
   # Render Map
   output$map <- renderLeaflet({
-    
+   
     # Legend color set up
     pal <-  colorQuantile(
       palette = "Reds",
