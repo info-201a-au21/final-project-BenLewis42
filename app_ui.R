@@ -27,7 +27,7 @@ chart1_panel <- tabPanel(
     ),
     
     mainPanel(
-      p("Display here")
+      plotlyOutput("chart1")
       
     )
   )

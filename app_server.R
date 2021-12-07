@@ -57,12 +57,17 @@ server <- function(input, output){
   
   output$chart1 <- renderPlotly({
     
+    chart1_data <- fire_data %>% 
+      filter(ArchiveYear == input$chart1_year)
     
     
     
-    # p <- plot_ly(x = , y = , type = "bar")
-    # 
-    # p
+    p <- plot_ly(chart1_data, x = chart1_data$UniqueId , y = chart1_data$StructuresDestroyed, type = "bar") %>% 
+      layout(title = paste0("Structures Destroyed by California Wildfires: ", input$chart1_year),
+             yaxis = list(title = "Structures Destroyed", range = c(0, 20000)),
+             xaxis = list(title = "California Wildfires", showticklabels = FALSE))
+                 
+    p
     
   })
   
