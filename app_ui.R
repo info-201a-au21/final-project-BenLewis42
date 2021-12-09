@@ -11,6 +11,13 @@ library(plotly)
 # First Page ---------------------------------------------------------------
 # Includes:
   # An Introduction of the project and dataset as well as some visuals
+intro <- tabPanel(
+  mainPanel("Introduction"),
+  )
+  
+
+    
+
 
 # Second Page --------------------------------------------------------------
 # Includes:
@@ -33,11 +40,6 @@ chart1_panel <- tabPanel(
     )
   )
 )
-
-
-
-
-
 
 
 # Third Page --------------------------------------------------------------
@@ -136,7 +138,7 @@ plot_panel <- tabPanel(
 
 # Creating UI
 
-ui <- navbarPage("Final", 
+ui <- navbarPage(intro, 
                  chart1_panel,
                  chart2_panel,
                  plot_panel
