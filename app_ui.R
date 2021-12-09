@@ -42,9 +42,45 @@ chart1_panel <- tabPanel(
 
 # Third Page --------------------------------------------------------------
 # Includes:
-  # A ?? plot
+
+plot_sidebar <- sidebarPanel(
+  selectInput(
+    inputId = "equip_type",
+    label = "Equipment Type",
+    choices = list("All",
+                   "Dozers" = "Dozers",
+                   "Engines" = "Engines",
+                   "Helicopters" = "Helicopters"),
+    selected = "All"
+  ),
+  sliderInput(
+    inputId = "year_s",
+    label = "Year",
+    min = 2013,
+    max = 2019,
+    value = c(2013, 2019)
+  )
+)
 
 
+plot_main <- mainPanel(
+  conditionalPanel(
+    condition = "input.equip_type == 'All'",
+    plotlyOutput(outputId = "plot_all")
+  ),
+  conditionalPanel(
+    condition = "input.equip_type != 'All'",
+    plotlyOutput(outputId = "plot")
+  )
+)
+
+chart2_panel <- tabPanel(
+  "Number of Equipments Used Visualization",
+  sidebarLayout(
+    plot_sidebar,
+    plot_main
+  )
+)
 
 
 
@@ -102,6 +138,7 @@ plot_panel <- tabPanel(
 
 ui <- navbarPage("Final", 
                  chart1_panel,
+                 chart2_panel,
                  plot_panel
                  
 )

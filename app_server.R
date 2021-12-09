@@ -54,7 +54,7 @@ server <- function(input, output){
   
   
   
-  
+  # Render chart1
   output$chart1 <- renderPlotly({
     
     chart1_data <- fire_data %>% 
@@ -73,4 +73,34 @@ server <- function(input, output){
   
   
   
+  # Render chart2
+  c_d_e_year <- reactive({
+    fire_data %>%
+      filter(ArchiveYear >= input$year_s[1] & ArchiveYear <= input$year_s[2]) %>%
+      select(Dozers, Engines, Helicopters, PersonnelInvolved, ArchiveYear)%>%
+      na.omit()%>%
+      group_by(ArchiveYear)%>%
+      summarise_all(sum)
+  })
+  
+  output$plot_all <- renderPlotly({
+    equip_plot_all <- ggplot(data = c_d_e_year()) +
+      geom_line(aes(y = Dozers, x = ArchiveYear, colour = "Dozers")) +
+      geom_line(aes(y = Engines, x = ArchiveYear, colour = "Engines")) +
+      geom_line(aes(y = Helicopters, x = ArchiveYear, colour = "Helicopters")) +
+      labs(x = "Year", y = "Number of Used", title = "Number of Dozers, Engines & Helicopters Used") +
+      scale_color_manual(
+        name = "Number of",
+        values = c("Dozers" = "red", "Engines" = "blue", "Helicopters" = "green")
+      )
+    equip_plot_all <- ggplotly(equip_plot_all)
+    return(equip_plot_all)
+  })
+  output$plot <- renderPlotly({
+    equip_plot <- ggplot(data = c_d_e_year()) +
+      geom_line(aes(y = !!as.name(input$equip_type), x = ArchiveYear)) +
+      labs(x = "Year", y = "Number of Used", title = "Number of Dozers, Engines & Helicopters Used")
+    equip_plotly <- ggplotly(equip_plot)
+    return(equip_plotly)
+  })
 }
