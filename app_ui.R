@@ -13,6 +13,7 @@ library(plotly)
   # An Introduction of the project and dataset as well as some visuals
 intro <- tabPanel(
   mainPanel("Introduction"),
+  p("Some text love text")
   )
   
 
@@ -138,7 +139,8 @@ plot_panel <- tabPanel(
 
 # Creating UI
 
-ui <- navbarPage(intro, 
+ui <- navbarPage("Header",
+                 intro,
                  chart1_panel,
                  chart2_panel,
                  plot_panel
