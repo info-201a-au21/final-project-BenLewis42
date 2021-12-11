@@ -62,23 +62,13 @@ server <- function(input, output){
       filter(!is.na(StructuresDestroyed)) %>%
       filter(!is.na(AcresBurned)) %>%
       select(StructuresDestroyed, AcresBurned)
+
     
-    
-    # p <- ggplot(structure_data, aes(x=StructuresDestroyed)) + 
-    #   geom_histogram() + 
-    #   labs(x = "Number of Buildings Destroyed", y = "Number of Wildfires", title = "Number of Wildfires Causing Specific Number of Destroy") +
-    #   ylim(0, 40) +
-    #   xlim(0, 20000) +
-    #   scale_x_log10()
-    # 
-    # p <- ggplotly(p)
-    # 
-    
-    # 
     p <- ggplot(structure_data, aes(y = StructuresDestroyed, x = AcresBurned)) + 
       geom_point() +
       scale_x_log10(limits = c(1, 500000)) + 
-      scale_y_log10(limits = c(1, 20000))
+      scale_y_log10(limits = c(1, 20000)) +
+      labs(x = "Acres Burned", y = "Structures Destroyed", title = "Destruction and Burn Area of CA Wildfires")
   
     
     p <- ggplotly(p)
@@ -117,7 +107,7 @@ server <- function(input, output){
   output$plot <- renderPlotly({
     equip_plot <- ggplot(data = c_d_e_year()) +
       geom_line(aes(y = !!as.name(input$equip_type), x = ArchiveYear)) +
-      labs(x = "Year", y = "Number of Used", title = "Number of Dozers, Engines & Helicopters Used")
+      labs(x = "Year", y = "Number Used", title = "Number of Dozers, Engines & Helicopters Used")
     equip_plotly <- ggplotly(equip_plot)
     return(equip_plotly)
   })
