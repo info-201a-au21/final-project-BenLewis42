@@ -79,8 +79,8 @@ summary <- tabPanel(
       h4("Areas Impacted by Wildfires, Answer to Q1"),
       p("In terms of the areas affected by wildfires, we found that minor wildfires had a sharp increase from 2016-2018. Regarding the major wildfires, 
         we noticed that during recent years, 2016-2018, most major wildfires were located around coastal areas in California. Thus, it would 
-        be a good choice for local governments in these areas to invest more in firefights and extinguishing equipments. 
-        In general, from 2015 to 2018, we can see increase of both major and minor wildfire incidents in California, which mean that 
+        be a good choice for local governments in these areas to invest more in firefighters and extinguishing equipments. 
+        In general, from 2015 to 2018, we can see increase of both major and minor wildfire incidents in California, which means that 
         wildfire problem is becoming serious in California during recent years.", style = "font-size:16px"),
       h2("Conclusion"),
       p("In conclusion, our data analysis found a dramatic increase in the number of wildfires in California,
@@ -258,6 +258,12 @@ plot_panel <- tabPanel(
         from 2013 to 2019 with a map of California. We display fires with a larger radius of damage 
         with a darker red color. This allows for a broader view on CA wildfires, and raises questions on both their 
         distribution and their change over time.", style = "font-size:16px"),
+      p("Note: in this map, you can choose to see \"major\" or \"minor\" wildfire 
+        incidents. \"major\" or \"minor\" are types that California government uses 
+        to classify wildfires. In genenral, if the # of injuries, Acres Burned, and 
+        # of firefights & equipments involved are over a threshold, then this wildfire 
+        will be classified as \"major\" incident, vice versa. Unfortunately, California 
+        government does not publicize specific values of threshold it chooses.", style = "font-size:16px"),
       style = ("background-color: white")
     )
   )
