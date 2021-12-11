@@ -57,17 +57,24 @@ server <- function(input, output){
   # Render chart1
   output$chart1 <- renderPlotly({
     
-    chart1_data <- fire_data %>% 
-      filter(ArchiveYear == input$chart1_year)
+    structure_data <- fire_data %>% 
+      filter(ArchiveYear == input$chart1_year) %>%
+      filter(!is.na(StructuresDestroyed)) %>%
+      select(StructuresDestroyed)
     
     
     
-    p <- plot_ly(chart1_data, x = chart1_data$UniqueId , y = chart1_data$StructuresDestroyed, type = "bar") %>% 
-      layout(title = paste0("Structures Destroyed by California Wildfires: ", input$chart1_year),
-             yaxis = list(title = "Structures Destroyed", range = c(0, 20000)),
-             xaxis = list(title = "California Wildfires", showticklabels = FALSE))
-                 
-    p
+    p <- ggplot(structure_data, aes(x=StructuresDestroyed)) + 
+      geom_histogram(binwidth=5) + 
+      labs(x = "Number of Buildings Destroyed", y = "Number of Wildfires", title = "Number of Wildfires Causing Specific Number of Destroy")
+    p <- ggplotly(p)
+    return(p)
+    #p <- plot_ly(chart1_data, x = chart1_data$UniqueId , y = chart1_data$StructuresDestroyed, type = "bar") %>% 
+    #  layout(title = paste0("Structures Destroyed by California Wildfires: ", input$chart1_year),
+    #         yaxis = list(title = "Structures Destroyed", range = c(0, 20000)),
+    #         xaxis = list(title = "California Wildfires", showticklabels = FALSE))
+    #             
+    #p
     
   })
   
