@@ -37,15 +37,15 @@ intro <- tabPanel(
         possibilities, and our group decided to analyze the places affected, the number of structures destroyed, and the equipment used in the containment
         of these wildfires. With this project, we hope to find some general trends for the last few years of Californian fires, and help raise awareness
          of the significance of some of these recent changes.", style = ("font-size:16px")),
-      h6("To do this wildfire analysis, we use the dataset \"California WildFires (2013-2019)\", which 
-         records all wildifire incidents during 2013-2019. These are all official records from California 
+      h6("To do our analysis, we use the dataset \"California WildFires (2013-2019)\", which 
+         records all Californian wildifire incidents during 2013-2019. These records are sourced directly from the Californian 
          government.", style = ("font-size:16px")),
-      h3("In our analysis, we will use the following attributes."),
+      h3("In our analysis, we will look into the following variables."),
       p("AcresBurned: Acres of land affected by wildfires", style = ("font-size:16px")),
       p("AirTankers: # of AirTankers used", style = ("font-size:16px")),
       p("ArchiveYear: Year the data was archived", style = ("font-size:16px")),
       p("Dozers: # of Dozers used", style = ("font-size:16px")),
-      p("Engines: # of Engines used", style = ("font-size:16px")),
+      p("Engines: # of Fire Engines used", style = ("font-size:16px")),
       p("Helicopters: # of Helicopters used", style = ("font-size:16px")),
       p("StructuresDestroyed: # of structures destroyed", style = ("font-size:16px")),
       h3("We will answer these three questions:"),
@@ -54,7 +54,7 @@ intro <- tabPanel(
       p("3. How destructive are these fires, and what are the general trends of this destruction?", style = ("font-size:16px")),
       style = ("background-color: white")
     ),
-    setBackgroundImage("fires.jpg")
+    setBackgroundImage("fire2.jpg")
   )
 )
 
@@ -86,8 +86,7 @@ summary <- tabPanel(
       p("In conclusion, our data analysis found a dramatic increase in the number of wildfires in California,
         causing significant damage to the state. This points to the continuing, destructive trends of wilfire, 
         and how important swift action is needed in order to limit this damage. If these trends continue, fire damage will likely only increase,
-        leading to economic hardship, damage to the state's natural environment, and even further loss of life. Therefore, it would be a wise choice 
-        for California goverment to invest more funds to fire prevention, firefighters recruiting & training, and equipment purchasing.", style = "font-size:16px"),
+        leading to economic hardship, damage to the state's natural environment, and even further loss of life.", style = "font-size:16px"),
       style = ("background-color: white")
     )
   )
@@ -127,9 +126,9 @@ chart1_panel <- tabPanel(
     tags$div(
       p("In this chart, We visualizes the # of buildings destroyed (y-axis), and 
         the acres burned (x-axis) in each wildfire incident from 2013 to 2019, 
-        through scatter plot. This plot can inspire our readers to think a lot, 
-        such as the relationship between acres burned (the scale of each wildfire) 
-        and buildings destroyed in each wildfire (how destructive each wildfire is).", style = "font-size:16px"),
+        with a scatter plot. This plot displays the relationship between acres burned (the scale of each wildfire) 
+        and buildings destroyed in each wildfire (how destructive each wildfire is), and the increase in total
+        damage in the latter half of the decade.", style = "font-size:16px"),
       style = ("background-color: white")
     )
   )
@@ -188,12 +187,11 @@ chart2_panel <- tabPanel(
   fluidPage(
     p(),
     tags$div(
-      p("In this chart, We visualizes the total number of equipments used to extinguish 
-        wildfires (y-axis) in each year (x-axis). In this chart, you can choose 
-        to see trends of specific equipments usage number from 2013 to 2019. There 
-        are in total three types of equipments we can check: Dozers, Engines, and 
-        Helicopter. This plot can inspire our readers to think many meaningful questions 
-        about California wildfire, such as the trend of equipments usages over years.", style = "font-size:16px"),
+      p("In this chart, We visualizes the total number of equipment used to extinguish 
+        wildfires (y-axis) in each year (x-axis). There 
+        are three types of equipment measured: Dozers, Engines, and 
+        Helicopters. This raises interesting questions about changes in fire containment over the years,
+        as well as potential economic impact.", style = "font-size:16px"),
       style = ("background-color: white")
     )
   )
@@ -256,19 +254,10 @@ plot_panel <- tabPanel(
   fluidPage(
     p(),
     tags$div(
-      p("In this chart, We visualizes the geospatial distribution of each wildfire 
-        from 2013 to 2019 in a map. In this map, if a wildfire causes more acres 
-        burned (i.e., more serious), then that incidents will be displayed as 
-        darker red color, vice versa. This plot can inspire our readers to observe 
-        California wildfire in a more overall vision, thinking about questions such 
-        as how wildfires are distributed geospatially, and how this distribution 
-        changes over time?", style = "font-size:16px"),
-      p("Note: in this map, you can choose to see \"major\" or \"minor\" wildfire 
-        incidents. \"major\" or \"minor\" are types that California government uses 
-        to classify wildfires. In genenral, if the # of injuries, Acres Burned, and 
-        # of firefights & equipments involved are over a threshold, then this wildfire 
-        will be classified as \"major\" incident, vice versa. Unfortunately, California 
-        government does not publicize specific values of threshold it chooses.", style = "font-size:16px"),
+      p("In this chart, We visualize the geospatial distribution of each wildfire 
+        from 2013 to 2019 with a map of California. We display fires with a larger radius of damage 
+        with a darker red color. This allows for a broader view on CA wildfires, and raises questions on both their 
+        distribution and their change over time.", style = "font-size:16px"),
       style = ("background-color: white")
     )
   )
