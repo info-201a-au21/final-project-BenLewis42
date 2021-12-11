@@ -60,15 +60,32 @@ server <- function(input, output){
     structure_data <- fire_data %>% 
       filter(ArchiveYear == input$chart1_year) %>%
       filter(!is.na(StructuresDestroyed)) %>%
-      select(StructuresDestroyed)
+      filter(!is.na(AcresBurned)) %>%
+      select(StructuresDestroyed, AcresBurned)
     
     
+    # p <- ggplot(structure_data, aes(x=StructuresDestroyed)) + 
+    #   geom_histogram() + 
+    #   labs(x = "Number of Buildings Destroyed", y = "Number of Wildfires", title = "Number of Wildfires Causing Specific Number of Destroy") +
+    #   ylim(0, 40) +
+    #   xlim(0, 20000) +
+    #   scale_x_log10()
+    # 
+    # p <- ggplotly(p)
+    # 
     
-    p <- ggplot(structure_data, aes(x=StructuresDestroyed)) + 
-      geom_histogram(binwidth=5) + 
-      labs(x = "Number of Buildings Destroyed", y = "Number of Wildfires", title = "Number of Wildfires Causing Specific Number of Destroy")
+    # 
+    p <- ggplot(structure_data, aes(y = StructuresDestroyed, x = AcresBurned)) + 
+      geom_point() +
+      scale_x_log10(limits = c(1, 500000)) + 
+      scale_y_log10(limits = c(1, 20000))
+  
+    
     p <- ggplotly(p)
+    
     return(p)
+    
+    
     
   })
   
