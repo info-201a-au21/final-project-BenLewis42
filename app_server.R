@@ -69,12 +69,6 @@ server <- function(input, output){
       labs(x = "Number of Buildings Destroyed", y = "Number of Wildfires", title = "Number of Wildfires Causing Specific Number of Destroy")
     p <- ggplotly(p)
     return(p)
-    #p <- plot_ly(chart1_data, x = chart1_data$UniqueId , y = chart1_data$StructuresDestroyed, type = "bar") %>% 
-    #  layout(title = paste0("Structures Destroyed by California Wildfires: ", input$chart1_year),
-    #         yaxis = list(title = "Structures Destroyed", range = c(0, 20000)),
-    #         xaxis = list(title = "California Wildfires", showticklabels = FALSE))
-    #             
-    #p
     
   })
   
